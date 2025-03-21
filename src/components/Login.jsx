@@ -22,11 +22,7 @@ function Login() {
     <div className="flex flex-col items-center justify-center bg-gray-100 min-h-screen">
       {/* Navbar */}
       <nav className="w-full bg-white shadow-md py-4 px-6 fixed top-0 left-0 flex items-center">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-          alt="University Logo"
-          className="w-12 h-12"
-        />
+        <img src="src/assets/UWU.jpg" alt="University Logo" className="w-12 h-12"/>
         <span className="ml-4 text-lg font-semibold text-gray-700">
           Virtual Learning Environment
         </span>
@@ -37,15 +33,11 @@ function Login() {
         {/* Left Section - Login Form */}
         <div className="w-full md:w-1/2 p-10">
           <div className="text-center">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-              alt="logo"
-              className="w-28 mx-auto"
-            />
+            <img src="src/assets/UWU.jpg" alt="logo" className="w-28 mx-auto"/>
             <h4 className="mt-4 text-2xl font-semibold">Uva Wellassa University</h4>
           </div>
 
-          <p className="mt-4 text-gray-600 text-center">Please login to VLE your account</p>
+          <p className="mt-4 text-gray-600 text-center">Please login to  VLE account</p>
 
           {/* Login Form */}
           <div className="mt-6">
