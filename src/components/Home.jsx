@@ -4,9 +4,9 @@ import { FaArrowRight } from "react-icons/fa"; // Import the arrow icon
 const courses = [
   {
     id: 1,
-    title: "React Fundamentals",
+    title: "Computer Networks",
     instructor: "John Doe",
-    students: "200 Students",
+    students: "85 Students",
     image: "src/assets/course1.jpg",
     zoomLink: "https://zoom.us/react-fundamentals",
     instructions: "Complete the pre-reading on JSX before the lecture.",
@@ -14,9 +14,9 @@ const courses = [
   },
   {
     id: 2,
-    title: "Advanced JavaScript",
+    title: "English Language ",
     instructor: "Jane Smith",
-    students: "150 Students",
+    students: "80 Students",
     image: "src/assets/course2.jpg",
     zoomLink: "https://zoom.us/advanced-js",
     instructions: "Prepare questions on closures and promises for discussion.",
@@ -24,9 +24,9 @@ const courses = [
   },
   {
     id: 3,
-    title: "UI/UX Design Principles",
+    title: "Mathematics",
     instructor: "Emily Johnson",
-    students: "180 Students",
+    students: "90 Students",
     image: "src/assets/course3.jpg",
     zoomLink: "https://zoom.us/uiux-principles",
     instructions: "Review the latest UI design trends before the session.",
@@ -34,9 +34,9 @@ const courses = [
   },
   {
     id: 4,
-    title: "Machine Learning Basics",
+    title: "Digital Marketing",
     instructor: "Michael Lee",
-    students: "120 Students",
+    students: "65 Students",
     image: "src/assets/course4.jpg",
     zoomLink: "https://zoom.us/ml-basics",
     instructions: "Install Python and Jupyter Notebook before attending.",
