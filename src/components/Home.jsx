@@ -14,7 +14,7 @@ const courses = [
   },
   {
     id: 2,
-    title: "English Language ",
+    title: "Software Architecture and Design Patterns ",
     instructor: "Jane Smith",
     students: "80 Students",
     image: "src/assets/course2.jpg",
@@ -24,7 +24,7 @@ const courses = [
   },
   {
     id: 3,
-    title: "Mathematics",
+    title: "Mathematics For Computing",
     instructor: "Emily Johnson",
     students: "90 Students",
     image: "src/assets/course3.jpg",
