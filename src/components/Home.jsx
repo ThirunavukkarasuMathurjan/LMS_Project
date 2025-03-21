@@ -1,5 +1,5 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa"; // Import the arrow icon
+import Courses from "./Courses";
 
 const courses = [
   {
@@ -66,6 +66,13 @@ const assignments = [
     subject: "UI/UX Design Principles",
     remainingDays: 9,
   },
+  {
+    id: 4,
+    name: "UI Redesign Case Study",
+    dueDate: "March 30, 2025",
+    subject: "UI/UX Design Principles",
+    remainingDays: 9,
+  },
 ];
 
 function Home() {
@@ -74,46 +81,83 @@ function Home() {
       {/* Navbar */}
       <nav className="w-full bg-blue-400 shadow-md py-4 px-6 flex items-center justify-between fixed top-0 left-0 z-50">
         <div className="flex items-center">
-          <img src="src/assets/UWU.jpg" alt="University Logo" className="w-12 h-12"/>
+          <img
+            src="src/assets/UWU.jpg"
+            alt="University Logo"
+            className="w-12 h-12"
+          />
           <span className="ml-4 text-lg font-semibold text-black">
             Uva Wellassa University
           </span>
         </div>
         <div className="hidden md:flex space-x-6">
-          <a href="#" className="text-black hover:text-blue-500">Calendar</a>
-          <a href="#" className="text-black hover:text-blue-500">Courses</a>
-          <a href="#" className="text-black hover:text-blue-500">Profile</a>
-          <a href="#" className="text-black hover:text-blue-500">Quizzes</a>
+          <a href="#" className="text-black hover:text-blue-500">
+            Calendar
+          </a>
+          <a href="#" className="text-black hover:text-blue-500">
+            Courses
+          </a>
+          <a href="#" className="text-black hover:text-blue-500">
+            Profile
+          </a>
+          <a href="#" className="text-black hover:text-blue-500">
+            Quizzes
+          </a>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="p-10 mt-20 w-full">
         <h1 className="text-3xl font-bold text-gray-800">Welcome Back!</h1>
-        <p className="text-gray-600 mt-2">Here’s what’s happening in your learning environment:</p>
+        <p className="text-gray-600 mt-2">
+          Here’s what’s happening in your learning environment:
+        </p>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 w-full">
-          
           {/* Recently Accessed Courses */}
           <div className="bg-white shadow-md rounded-lg p-6 col-span-2 w-full">
             <h2 className="text-xl font-semibold">Recently Accessed Courses</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
               {courses.map((course) => (
-                <div key={course.id} className="bg-gray-100 shadow-md rounded-lg overflow-hidden relative">
-                  <img src={course.image} alt={course.title} className="w-full h-40 object-cover"/>
+                <div
+                  key={course.id}
+                  className="bg-gray-100 shadow-md rounded-lg overflow-hidden relative"
+                >
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-40 object-cover"
+                  />
                   <div className="p-4">
                     <h3 className="text-lg font-semibold">{course.title}</h3>
-                    <p className="text-gray-500 text-sm">Instructor: {course.instructor}</p>
+                    <p className="text-gray-500 text-sm">
+                      Instructor: {course.instructor}
+                    </p>
                     <p className="text-gray-600 text-sm">{course.students}</p>
                   </div>
                   {/* Floating Button */}
-                  <a href={course.coursePage} className="absolute bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 transition">
-                    <FaArrowRight />
+                  <a
+                    href={course.coursePage}
+                    className="absolute bottom-4 right-4"
+                  >
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-lg hover:bg-blue-600 transition">
+                      View
+                    </button>
                   </a>
                 </div>
               ))}
             </div>
+
+            {/* More Button */}
+            <div className="flex justify-end mt-6">
+              <button
+                className="bg-blue-500 text-white px-6 py-2 rounded-md shadow-md hover:bg-blue-600 transition"
+              >
+                More
+              </button>
+            </div>
+            
           </div>
 
           {/* Upcoming Assignments */}
@@ -122,11 +166,20 @@ function Home() {
             {assignments.length > 0 ? (
               <ul className="mt-4 space-y-4">
                 {assignments.map((assignment) => (
-                  <li key={assignment.id} className="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <li
+                    key={assignment.id}
+                    className="bg-gray-100 p-4 rounded-lg shadow-md"
+                  >
                     <h3 className="text-lg font-semibold">{assignment.name}</h3>
-                    <p className="text-gray-600 text-sm">📅 Due: {assignment.dueDate}</p>
-                    <p className="text-gray-500 text-sm">📖 Subject: {assignment.subject}</p>
-                    <p className="text-red-500 text-sm font-semibold">⏳ {assignment.remainingDays} days left</p>
+                    <p className="text-gray-600 text-sm">
+                      📅 Due: {assignment.dueDate}
+                    </p>
+                    <p className="text-gray-500 text-sm">
+                      📖 Subject: {assignment.subject}
+                    </p>
+                    <p className="text-red-500 text-sm font-semibold">
+                      ⏳ {assignment.remainingDays} days left
+                    </p>
                   </li>
                 ))}
               </ul>
@@ -141,15 +194,30 @@ function Home() {
             {courses.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                 {courses.map((course) => (
-                  <div key={course.id} className="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <div
+                    key={course.id}
+                    className="bg-gray-100 p-4 rounded-lg shadow-md"
+                  >
                     <h3 className="text-lg font-semibold">{course.title}</h3>
-                    <p className="text-gray-600 text-sm">🎤 Instructor: {course.instructor}</p>
-                    <p className="text-blue-500 text-sm">
-                      🔗 <a href={course.zoomLink} target="_blank" rel="noopener noreferrer" className="underline">Join Zoom Session</a>
+                    <p className="text-gray-600 text-sm">
+                      🎤 Instructor: {course.instructor}
                     </p>
-                    <p className="text-gray-500 text-sm">📝 {course.instructions}</p>
+                    <p className="text-blue-500 text-sm">
+                      🔗{" "}
+                      <a
+                        href={course.zoomLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline"
+                      >
+                        Join Zoom Session
+                      </a>
+                    </p>
+                    <p className="text-gray-500 text-sm">
+                      📝 {course.instructions}
+                    </p>
                     <a href={course.coursePage}>
-                      <button className="mt-3 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">
+                      <button className="mt-3 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">
                         Go to Course Page
                       </button>
                     </a>
