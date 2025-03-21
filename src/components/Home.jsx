@@ -3,30 +3,30 @@ import React from "react";
 const courses = [
   {
     id: 1,
-    title: "React Fundamentals",
+    title: "Computer Networks",
     instructor: "John Doe",
-    students: "200 Students",
+    students: "85 Students",
     image: "src/assets/course1.jpg",
   },
   {
     id: 2,
-    title: "Advanced JavaScript",
+    title: "English Language ",
     instructor: "Jane Smith",
-    students: "150 Students",
+    students: "80 Students",
     image: "src/assets/course2.jpg",
   },
   {
     id: 3,
-    title: "UI/UX Design Principles",
+    title: "Mathematics",
     instructor: "Emily Johnson",
-    students: "180 Students",
+    students: "90 Students",
     image: "src/assets/course3.jpg",
   },
   {
     id: 4,
-    title: "Machine Learning Basics",
+    title: "Digital Marketing",
     instructor: "Michael Lee",
-    students: "120 Students",
+    students: "65 Students",
     image: "src/assets/course4.jpg",
   },
 ];
