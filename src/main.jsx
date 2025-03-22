@@ -6,12 +6,16 @@ import Login from './components/Login.jsx'
 import Home from './components/Home.jsx'
 import Courses from './components/Courses.jsx'
 import Module from './components/Module.jsx'
+import Profile from './components/Profile.jsx'
+import Discussion from './components/Discussion.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <Login /> */}
     {/* <Home/> */}
     {/* <Courses/> */}
-    <Module/>
+    {/* <Module/> */}
+    {/* <Profile/> */}
+    <Discussion/>
   </StrictMode>,
 )
