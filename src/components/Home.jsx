@@ -90,7 +90,7 @@ function Home() {
           </span>
         </div>
         <div className="hidden md:flex space-x-6">
-          <a href="#" className="text-black hover:text-blue-500">
+          <a href="/calender" className="text-black hover:text-blue-500">
             Calendar
           </a>
           <a href="/courses" className="text-black hover:text-blue-500">
