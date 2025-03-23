@@ -1,5 +1,4 @@
 import React from "react";
-import Courses from "./Courses";
 
 const courses = [
   {
@@ -100,8 +99,8 @@ function Home() {
           <a href="/profile" className="text-black hover:text-blue-500">
             Profile
           </a>
-          <a href="#" className="text-black hover:text-blue-500">
-            Online Lecture Portal
+          <a href="/join" className="text-black hover:text-blue-500">
+            Join Lecture
           </a>
         </div>
       </nav>
