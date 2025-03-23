@@ -101,16 +101,16 @@ function Home() {
             Profile
           </a>
           <a href="#" className="text-black hover:text-blue-500">
-            Quizzes
+            Online Lecture Portal
           </a>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="p-10 mt-20 w-full">
-        <h1 className="text-3xl font-bold text-gray-800">Welcome Back!</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Hello Peter John,</h1>
         <p className="text-gray-600 mt-2">
-          Here’s what’s happening in your learning environment:
+        Welcome Back to your virtual learning environment.
         </p>
 
         {/* Bento Grid */}

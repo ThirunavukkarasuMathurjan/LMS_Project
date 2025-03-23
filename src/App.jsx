@@ -1,16 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Profile from "./components/Profile";
+import { Routes, Route } from "react-router-dom";
+import Quiz from "./components/Quiz";
+import Result from "./components/Result";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Profile" element={<Profile />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Quiz />} />
+      <Route path="/results" element={<Result />} />
+    </Routes>
   );
 }
 

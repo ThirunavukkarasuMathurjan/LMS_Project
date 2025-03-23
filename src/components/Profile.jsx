@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 function Profile() {
   const [user, setUser] = useState({
-    firstName: "John",
-    lastName: "Doe",
+    firstName: "Peter",
+    lastName: "John",
     enrollmentNo: "123456",
     degree: "Computer Science",
     email: "john.doe@example.com",
