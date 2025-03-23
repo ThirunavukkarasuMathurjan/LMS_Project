@@ -94,10 +94,10 @@ function Home() {
           <a href="#" className="text-black hover:text-blue-500">
             Calendar
           </a>
-          <a href="#" className="text-black hover:text-blue-500">
+          <a href="/courses" className="text-black hover:text-blue-500">
             Courses
           </a>
-          <a href="#" className="text-black hover:text-blue-500">
+          <a href="/profile" className="text-black hover:text-blue-500">
             Profile
           </a>
           <a href="#" className="text-black hover:text-blue-500">

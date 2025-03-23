@@ -4,22 +4,22 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Quiz from "./components/Quiz";
 import Result from "./components/Result";
+import Profile from "./components/Profile"; // Import Profile Component
+import Courses from "./components/Courses";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true); // Set default to true
 
   return (
     <Routes>
-      {!isAuthenticated ? (
-        <Route path="/*" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-      ) : (
-        <>
-          <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<Quiz />} />
-          <Route path="/results" element={<Result />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </>
-      )}
+      {/* Always allow access to home */}
+      <Route path="/" element={<Home />} />
+      <Route path="/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/login" />} />
+      <Route path="/courses" element={isAuthenticated ? <Courses /> : <Navigate to="/login" />} />
+      <Route path="/quiz" element={isAuthenticated ? <Quiz /> : <Navigate to="/login" />} />
+      <Route path="/results" element={isAuthenticated ? <Result /> : <Navigate to="/login" />} />
+      <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 }
