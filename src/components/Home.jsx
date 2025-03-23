@@ -107,7 +107,7 @@ function Home() {
 
       {/* Hero Section */}
       <section className="p-10 mt-20 w-full">
-        <h1 className="text-3xl font-bold text-gray-800">Hello Peter John,</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Hello Sophia Williams,</h1>
         <p className="text-gray-600 mt-2">
         Welcome Back to your virtual learning environment.
         </p>

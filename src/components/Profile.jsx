@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 function Profile() {
   const [user, setUser] = useState({
-    firstName: "Peter",
-    lastName: "John",
-    enrollmentNo: "123456",
-    degree: "Computer Science",
-    email: "john.doe@example.com",
-    phone: "+123456789",
-    linkedin: "https://linkedin.com/in/johndoe",
-    github: "https://github.com/johndoe",
+    firstName: "Sophia",
+    lastName: "Williams",
+    enrollmentNo: "IIT/30/001",
+    degree: "Industrial Information Technology",
+    email: "sophia.doe@example.com",
+    phone: "0771234567",
+    linkedin: "https://linkedin.com/in/Sophia Williams",
+    github: "https://github.com/Sophia Williams",
     profilePic: "https://via.placeholder.com/150",
     coverImage: "https://via.placeholder.com/800x200",
   });
