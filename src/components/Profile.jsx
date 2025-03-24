@@ -34,9 +34,10 @@ function Profile() {
       {/* Cover Image */}
       <div className="relative w-full max-w-4xl h-56">
         <img
-          src={user.coverImage}
+          src={"src/assets/Cover.jpg"}
           alt="Cover"
           className="w-full h-full object-cover rounded-lg shadow-md"
+          
         />
       </div>
 
@@ -45,9 +46,10 @@ function Profile() {
         {/* Profile Picture */}
         <div className="flex justify-center">
           <img
-            src={user.profilePic}
+            src={"src/assets/Profile.jpg"}
             alt="Profile"
             className="w-24 h-24 rounded-full border-4 border-white shadow-md"
+            
           />
         </div>
 
