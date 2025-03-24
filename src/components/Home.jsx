@@ -55,7 +55,7 @@ const assignments = [
     id: 2,
     name: "Research Project",
     dueDate: "March 26, 2025",
-    subject: "Progruse Presentation",
+    subject: "Progress Presentation",
     remainingDays: 2,
   },
   {
@@ -107,9 +107,11 @@ function Home() {
 
       {/* Hero Section */}
       <section className="p-10 mt-20 w-full">
-        <h1 className="text-3xl font-bold text-gray-800">Hello Sophia Williams,</h1>
+        <h1 className="text-3xl font-bold text-gray-800">
+          Hello Sophia Williams,
+        </h1>
         <p className="text-gray-600 mt-2">
-        Welcome Back to your virtual learning environment.
+          Welcome Back to your virtual learning environment.
         </p>
 
         {/* Bento Grid */}
@@ -150,13 +152,10 @@ function Home() {
 
             {/* More Button */}
             <div className="flex justify-end mt-6">
-              <button
-                className="bg-blue-500 text-white px-6 py-2 rounded-md shadow-md hover:bg-blue-600 transition"
-              >
-                More
+              <button className="bg-blue-500 text-white px-6 py-2 rounded-md shadow-md hover:bg-blue-600 transition">
+                <a href="/courses">More</a>
               </button>
             </div>
-            
           </div>
 
           {/* Upcoming Assignments */}
@@ -215,11 +214,13 @@ function Home() {
                     <p className="text-gray-500 text-sm">
                       📝 {course.instructions}
                     </p>
-                    <a href={course.coursePage}>
-                      <button className="mt-3 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">
-                        Go to Course Page
-                      </button>
-                    </a>
+                    <div className="flex justify-end mt-3">
+                      {/* <a href={course.coursePage}> */}
+                        <button className="bg-blue-500 text-white py-2 w-32 rounded-md hover:bg-blue-600">
+                          <a href="/module">Course</a>
+                        </button>
+                      {/* </a> */}
+                    </div>
                   </div>
                 ))}
               </div>

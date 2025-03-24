@@ -9,6 +9,8 @@ import Profile from "./components/Profile"; // Import Profile Component
 import Courses from "./components/Courses";
 import JoinLecture from "./components/Joinlecture";
 import CalendarPage from "./components/CalendarPage";
+import Module from "./components/Module";
+import Discussion from "./components/Discussion";
 
 
 
@@ -21,8 +23,10 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/login" />} />
       <Route path="/courses" element={isAuthenticated ? <Courses /> : <Navigate to="/login" />} />
+      <Route path="/module" element={isAuthenticated ? <Module /> : <Navigate to="/login" />} />
       <Route path="/calender" element={isAuthenticated ? <CalendarPage /> : <Navigate to="/login" />} />
       <Route path="/join" element={isAuthenticated ? <JoinLecture/> : <Navigate to="/login" />} />
+      <Route path="/discussion" element={isAuthenticated ? <Discussion/> : <Navigate to="/login" />} />
       <Route path="/quiz" element={isAuthenticated ? <Quiz /> : <Navigate to="/login" />} />
       <Route path="/results" element={isAuthenticated ? <Result /> : <Navigate to="/login" />} />
       <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
