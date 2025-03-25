@@ -3,8 +3,8 @@ import React from "react";
 function Module() {
   // Hardcoded course details
   const course = {
-    title: "React Development",
-    instructor: "John Doe",
+    title: "Computer Networks",
+    instructor: "Sunil Rajapaksha",
   };
 
   // Hardcoded chapters
