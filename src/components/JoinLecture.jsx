@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { MdScreenShare, MdStopScreenShare } from "react-icons/md";
+import Whiteboard from "./Whiteboard";
 
 function JoinLecture() {
-  const [lectureCode, setLectureCode] = useState('');
-  const [password, setPassword] = useState('');
+  const [lectureCode, setLectureCode] = useState("");
+  const [password, setPassword] = useState("");
   const [joined, setJoined] = useState(false);
 
   const handleJoin = (e) => {
@@ -10,12 +12,12 @@ function JoinLecture() {
     if (lectureCode && password) {
       setJoined(true);
     } else {
-      alert('Please enter a valid code and password.');
+      alert("Please enter a valid code and password.");
     }
   };
 
   const handleClose = () => {
-    window.location.href = '/';  // Navigates to the home page
+    window.location.href = "/"; // Navigates to the home page
   };
 
   if (joined) {
@@ -31,7 +33,9 @@ function JoinLecture() {
         >
           ✖
         </button>
-        <h2 className="text-2xl font-semibold text-center mb-4">Join Lecture</h2>
+        <h2 className="text-2xl font-semibold text-center mb-4">
+          Join Lecture
+        </h2>
         <form onSubmit={handleJoin} className="space-y-4">
           <input
             type="text"
@@ -60,19 +64,104 @@ function JoinLecture() {
 }
 
 function LectureRoom({ code }) {
+  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState("");
+  const [screenShared, setScreenShared] = useState(false);
+  const [whiteboard, setWhiteboard] = useState(false);
+
+  const sendMessage = () => {
+    if (message.trim()) {
+      setMessages([...messages, { text: message, sender: "You" }]);
+      setMessage("");
+    }
+  };
+
+  const toggleScreenShare = () => {
+    setScreenShared(!screenShared);
+  };
+
+  const toggleWhiteboard = () => {
+    if (whiteboard) {
+      if (window.confirm("Are you sure you want to close the Whiteboard?")) {
+        setWhiteboard(false);
+      }
+    } else {
+      setWhiteboard(true);
+    }
+  };
+
+  const confirmLeave = () => {
+    if (window.confirm("Are you sure you want to leave the lecture?")) {
+      window.location.reload();
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
-      <h2 className="text-3xl font-bold">Lecture Room</h2>
-      <p className="text-lg mt-2">Lecture Code: {code}</p>
-      <div className="mt-6 p-6 bg-gray-800 rounded-lg shadow-lg">
-        <p className="text-lg">Live video stream (Placeholder)</p>
-        <div className="mt-4 w-64 h-40 bg-gray-700 flex items-center justify-center rounded-lg">
-          <span>Video Feed</span>
+    <div className="flex flex-col h-screen w-full bg-gray-900 text-white">
+      <div className="p-4 bg-gray-800 flex justify-between items-center">
+        <h2 className="text-xl font-bold">Lecture Code: {code}</h2>
+        <button
+          className="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600"
+          onClick={confirmLeave}
+        >
+          Leave Lecture
+        </button>
+      </div>
+      <div className="flex flex-grow">
+        <div className="flex-grow flex items-center justify-center bg-gray-700">
+          {whiteboard ? (
+            <Whiteboard />
+          ) : screenShared ? (
+            <p className="text-lg">Screen Sharing in Progress...</p>
+          ) : (
+            <p className="text-lg">Live Video Stream (Placeholder)</p>
+          )}
+        </div>
+        <div className="w-1/4 p-4 bg-gray-800">
+          <h3 className="text-lg font-semibold mb-2">Chat</h3>
+          <div className="h-64 overflow-y-auto bg-gray-700 p-2 rounded-lg">
+            {messages.map((msg, index) => (
+              <p key={index} className="p-1 text-sm">
+                <strong>{msg.sender}:</strong> {msg.text}
+              </p>
+            ))}
+          </div>
+          <div className="mt-2 flex">
+            <input
+              type="text"
+              className="flex-grow px-2 py-1 border rounded-lg bg-gray-600 text-white"
+              placeholder="Type a message..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <button
+              className="ml-2 bg-blue-500 px-3 py-1 rounded-lg hover:bg-blue-600"
+              onClick={sendMessage}
+            >
+              Send
+            </button>
+          </div>
         </div>
       </div>
-      <button className="mt-6 bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600" onClick={() => window.location.reload()}>
-        Leave Lecture
-      </button>
+      <div className="p-4 bg-gray-800 flex justify-center gap-4">
+        <button
+          className="bg-green-500 px-4 py-2 rounded-lg hover:bg-green-600 flex items-center"
+          onClick={toggleScreenShare}
+        >
+          {screenShared ? (
+            <MdStopScreenShare className="mr-2" />
+          ) : (
+            <MdScreenShare className="mr-2" />
+          )}
+          {screenShared ? "Stop Sharing" : "Share Screen"}
+        </button>
+        <button
+          className="bg-yellow-500 px-4 py-2 rounded-lg hover:bg-yellow-600"
+          onClick={toggleWhiteboard}
+        >
+          {whiteboard ? "Close Whiteboard" : "Open Whiteboard"}
+        </button>
+      </div>
     </div>
   );
 }
