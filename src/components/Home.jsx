@@ -9,7 +9,7 @@ const courses = [
     image: "src/assets/course1.jpg",
     zoomLink: "https://zoom.us/react-fundamentals",
     instructions: "Complete the pre-reading on JSX before the lecture.",
-    coursePage: "/courses/react-fundamentals",
+    coursePage: "/module",
   },
   {
     id: 2,

@@ -39,7 +39,7 @@ function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [quizStarted, setQuizStarted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes = 600 seconds
+  const [timeLeft, setTimeLeft] = useState(60); // 10 minutes = 600 seconds
   const [answers, setAnswers] = useState({});
   
   useEffect(() => {

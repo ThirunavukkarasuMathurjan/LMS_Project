@@ -60,7 +60,11 @@ function Module() {
         <h3 className="text-xl font-semibold text-gray-800">
           📢 Announcements
         </h3>
-        <p className="text-gray-600 mt-2">No announcements available.</p>
+        <p className="text-gray-600 mt-2">
+          The next lecture will be conducted online. <br/>
+          Lecture ID: IIT - 356  <br/>
+          Password: 698547
+        </p>
       </div>
 
       {/* Discussion and Quiz Buttons */}
@@ -72,7 +76,6 @@ function Module() {
           <a href="/quiz">Quiz</a>
         </button>
       </div>
-
 
       <div className="text-left w-full max-w-4xl">
         {/* Loop over chapters */}
